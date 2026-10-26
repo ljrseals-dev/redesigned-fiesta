@@ -138,3 +138,5 @@ pytest -q test_vintage_harness.py
 ```
 
 These tests use synthetic fixtures to verify evidence plumbing only. They do not capture audio, train weights, launch an accelerator, validate a vintage unit, or establish measured compressor curves. The composite-error helper expects already-normalized component errors; it is not a validated perceptual metric.
+
+The paired skill-effectiveness protocol is documented in [`docs/SKILL_EVIDENCE_PROTOCOL.md`](docs/SKILL_EVIDENCE_PROTOCOL.md). It compares identical tasks with and without the skill, using predeclared verifiers, blinded review where needed, and published artifacts. No skill A/B benchmark has been run yet.
