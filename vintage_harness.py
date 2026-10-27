@@ -173,3 +173,11 @@ def reject_holdout_leakage(calibration_ids: Iterable[str], holdout_ids: Iterable
     overlap = set(calibration_ids) & set(holdout_ids)
     if overlap:
         raise EvidenceError("calibration/holdout leakage detected: " + ", ".join(sorted(overlap)))
+
+
+if __name__ == "__main__":
+    # Make the documented one-liner run the harness contract tests explicitly.
+    import pytest
+
+    tests = Path(__file__).with_name("test_vintage_harness.py")
+    raise SystemExit(pytest.main(["-q", str(tests)]))
